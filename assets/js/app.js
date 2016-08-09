@@ -22,7 +22,7 @@ app.config(function($stateProvider, $urlRouterProvider, toastrConfig) {
         .state('ingreso', {
             url: "/ingreso",
             templateUrl: "vistas/ingreso.html",
-            // controller: 'IngresoCtrl',
+            controller: 'IngresoAdminCtrl',
             data: {
                 loginRequerido: false
             }
@@ -30,7 +30,7 @@ app.config(function($stateProvider, $urlRouterProvider, toastrConfig) {
         .state('registro', {
             url: "/registro",
             templateUrl: "vistas/registro.html",
-            // controller: 'IngresoCtrl',
+            controller: 'RegistroAdminCtrl',
             data: {
                 loginRequerido: false
             }
@@ -76,7 +76,7 @@ app.run(function($rootScope, $cookies, $state, toastr) {
         var requiereLogin = toState.data.loginRequerido;
 
         if (requiereLogin) {
-            if ($cookies.get('UsuarioId')) {
+            if ($cookies.get('AdminId')) {
                 toastr.success('Felicidades se encuentra logueado', 'Éxito');
             } else {
                 toastr.info('Necesita estar logueado para poder acceder a esta vista', 'Información');
