@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Administrador de Campeonatos</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mi-estilo.css">
+    <link rel="stylesheet" href="lib/css/angular-toastr.css">
+    <!-- <link rel="stylesheet" href="https://npmcdn.com/angular-toastr/dist/angular-toastr.css" /> -->
+</head>
+
+<body ng-app="campeonato">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/"><img class="imagen-brand" alt="olimpiadas" src="img/olympic-games.png"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#/">Inicio <span class="sr-only">(current)</span></a></li>
+                    <li>
+                        <a href="#/solicitud">Equipos </a>
+                    </li>
+                    <li>
+                        <a href="#/consulta">Jugadores </a>
+                    </li>
+                    <li>
+                        <a href="#/acercade">Juegos </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/perfil">Mi Perfil </a></li>
+                    <li><a href="#/registro">Registrar </a></li>
+                    <li><a href="#/ingreso">Ingresar </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div ui-view></div>
+    </div>
+    <script src="lib/js/jquery-1.12.0.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <!-- angular -->
+    <script src="lib/js/angular.min.js"></script>
+    <!-- dependencias -->
+    <script src="lib/js/angular-ui-router.js"></script>
+    <script src="lib/js/angular-resource.js"></script>
+    <script src="lib/js/angular-cookies.js"></script>
+    <script src="lib/js/angular-toastr.js"></script>
+    <script src="lib/js/angular-toastr.tpls.js"></script>
+    <!-- <script src="https://npmcdn.com/angular-toastr/dist/angular-toastr.tpls.js"></script> -->
+    <!-- app -->
+    <script src="js/app.js"></script>
+    <!-- controladores -->
+
+    <!-- factories -->
+
+
+</body>
+
+</html>
