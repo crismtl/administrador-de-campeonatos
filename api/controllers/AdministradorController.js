@@ -20,7 +20,7 @@ module.exports = {
           error: 'Contraseña Incorrecto'
         });
       } else {
-        delete admin.contrasenia;
+        // delete admin.contrasenia;
         return res.ok(admin);
       }
     });

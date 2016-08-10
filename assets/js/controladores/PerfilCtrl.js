@@ -13,5 +13,9 @@ app.controller('PerfilCtrl', ['$scope', 'AdministradorFactory', 'toastr', '$cook
         toastr.error('Error!', 'No se pudo obtener el administrador');
         console.log('Error en obtener el administrador', error);
       });
+
+    $scope.actualizar = function() {
+      console.log('admin update', $scope.admin);
+    }
   }
 ]);
