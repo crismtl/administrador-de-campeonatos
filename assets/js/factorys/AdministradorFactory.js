@@ -5,6 +5,12 @@ app.factory('AdministradorFactory', ['$resource', function($resource) {
     login: {
       url: 'http://localhost:1337/Administrador/ingreso',
       method: 'POST'
+    },
+    actualizar: {
+      method: 'PUT',
+      params: {
+        idAdministrador: '@idAdministrador'
+      }
     }
   });
   return factory;

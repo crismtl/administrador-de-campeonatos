@@ -77,7 +77,7 @@ app.run(function($rootScope, $cookies, $state, toastr) {
 
     if (requiereLogin) {
       if ($cookies.get('AdminId')) {
-        toastr.success('Felicidades se encuentra logueado', 'Éxito');
+        toastr.success('Felicidades usted ha ingresado al sistema', 'Éxito');
       } else {
         toastr.info('Necesita estar logueado para poder acceder a esta vista', 'Información');
         event.preventDefault();

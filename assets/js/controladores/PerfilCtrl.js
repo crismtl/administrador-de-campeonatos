@@ -16,6 +16,17 @@ app.controller('PerfilCtrl', ['$scope', 'AdministradorFactory', 'toastr', '$cook
 
     $scope.actualizar = function() {
       console.log('admin update', $scope.admin);
+      AdministradorFactory.actualizar({
+        idAdministrador: $cookies.get('AdminId')
+      }, $scope.admin).$promise.then(function success(respuesta) {
+          console.log('éxito en la actualización de administrador', respuesta);
+          toastr.success('Éxito!', 'Se actualizó la información del administrador');
+          $scope.admin = respuesta;
+        },
+        function error(error) {
+          toastr.error('Error!', 'No se pudo obtener el administrador');
+          console.log('Error al actualizar el administrador', error);
+        });
     }
   }
 ]);
