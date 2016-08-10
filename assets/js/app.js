@@ -43,31 +43,30 @@ app.config(function($stateProvider, $urlRouterProvider, toastrConfig) {
         loginRequerido: true
       }
     })
-    // // .state('acercade', {
-    // //     url: "/acercade",
-    // //     templateUrl: "rutas/acercade.html",
-    // //     // data: {
-    // //     //     loginRequerido: false
-    // //     // }
-    // // })
-    // .state('solicitud', {
-    //     url: "/solicitud",
-    //     templateUrl: "vistas/solicitud.html",
-    //     controller: 'SolicitudCtrl',
-    //     data: {
-    //         loginRequerido: true
-    //     }
-    // })
-    // .state('consulta', {
-    //     url: "/consulta",
-    //     templateUrl: "vistas/consulta.html",
-    //     controller: 'ConsultaCtrl',
-    //     data: {
-    //         loginRequerido: true
-    //     }
-    // })
-
-  ;
+    .state('equipos', {
+      url: "/equipos",
+      templateUrl: "vistas/equipos.html",
+      // controller: 'PerfilCtrl',
+      data: {
+        loginRequerido: true
+      }
+    })
+    .state('jugadores', {
+      url: "/jugadores",
+      templateUrl: "vistas/jugadores.html",
+      // controller: 'PerfilCtrl',
+      data: {
+        loginRequerido: true
+      }
+    })
+    .state('juegos', {
+      url: "/juegos",
+      templateUrl: "vistas/juegos.html",
+      // controller: 'PerfilCtrl',
+      data: {
+        loginRequerido: true
+      }
+    });
   $urlRouterProvider.otherwise("/");
 });
 
