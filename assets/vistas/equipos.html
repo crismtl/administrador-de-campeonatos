@@ -1,1 +1,35 @@
-<h1>Equipos</h1>
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <form class="form-horizontal">
+      <fieldset>
+        <legend>Registro de Equipo</legend>
+        <div class="form-group">
+          <label for="inputEmail" class="col-lg-2 control-label">Nombre completo</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" id="inputEmail" placeholder="Nombre completo" ng-model="admin.nombre" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail" class="col-lg-2 control-label">Correo electrónico</label>
+          <div class="col-lg-10">
+            <input type="email" class="form-control" id="inputEmail" placeholder="Correo electrónico" ng-model="admin.correo" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword" class="col-lg-2 control-label">Contraseña</label>
+          <div class="col-lg-10">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña" ng-model="admin.contrasenia" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <button type="reset" class="btn btn-default">Cancelar</button>
+            <button type="submit" class="btn btn-primary" ng-click="registrar()">Registrar</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <div class="col-sm-3"></div>
+</div>
