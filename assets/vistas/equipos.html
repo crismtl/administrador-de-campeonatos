@@ -5,21 +5,33 @@
       <fieldset>
         <legend>Registro de Equipo</legend>
         <div class="form-group">
-          <label for="inputEmail" class="col-lg-2 control-label">Nombre completo</label>
+          <label for="inputEmail" class="col-lg-2 control-label">Nombre</label>
           <div class="col-lg-10">
-            <input type="text" class="form-control" id="inputEmail" placeholder="Nombre completo" ng-model="admin.nombre" required>
+            <input type="text" class="form-control" id="inputEmail" placeholder="Nombre" ng-model="equipo.nombre" required>
           </div>
         </div>
         <div class="form-group">
-          <label for="inputEmail" class="col-lg-2 control-label">Correo electrónico</label>
+          <label for="inputEmail" class="col-lg-2 control-label">Año de fundación</label>
           <div class="col-lg-10">
-            <input type="email" class="form-control" id="inputEmail" placeholder="Correo electrónico" ng-model="admin.correo" required>
+            <input type="text" class="form-control" id="inputEmail" placeholder="Año de fundación" ng-model="equipo.anio" required>
           </div>
         </div>
         <div class="form-group">
-          <label for="inputPassword" class="col-lg-2 control-label">Contraseña</label>
+          <label for="inputPassword" class="col-lg-2 control-label">Presidente</label>
           <div class="col-lg-10">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña" ng-model="admin.contrasenia" required>
+            <input type="text" class="form-control" id="inputPassword" placeholder="Presidente" ng-model="equipo.presidente" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword" class="col-lg-2 control-label">Entrenador</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" id="inputPassword" placeholder="Entrenador" ng-model="equipo.entrenador" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword" class="col-lg-2 control-label">Estadio</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" id="inputPassword" placeholder="Estadio" ng-model="equipo.estadio" required>
           </div>
         </div>
         <div class="form-group">
