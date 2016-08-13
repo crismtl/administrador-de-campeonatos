@@ -10,5 +10,4 @@ app.factory('EquipoFactory', ['$resource', function($resource) {
     }
   });
   return factory;
-
 }]);

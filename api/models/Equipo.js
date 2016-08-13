@@ -11,6 +11,9 @@ module.exports = {
     nombre: {
       type: 'string'
     },
+    imagen: {
+      type: 'string'
+    },
     anio: {
       type: 'integer'
     },
@@ -26,6 +29,14 @@ module.exports = {
     jugadores: {
       collection: 'jugador',
       via:'equipo'
+    },
+    juegosLocal: {
+      collection: 'juego',
+      via: 'local'
+    },
+    juegosVisitante: {
+      collection: 'juego',
+      via: 'visitante'
     }
   }
 };

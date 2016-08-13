@@ -1,1 +1,72 @@
-<h1>Juegos</h1>
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <form class="form-horizontal">
+      <fieldset>
+        <legend>Registro de Juego</legend>
+        <div class="form-group">
+          <label for="inputEmail" class="col-lg-2 control-label">Fecha</label>
+          <div class="col-lg-10">
+            <input type="date" class="form-control" id="inputEmail" placeholder="Fecha" ng-model="juego.fecha" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword" class="col-lg-2 control-label">Equipo Local</label>
+          <div class="col-lg-10">
+            <select ng-model="juego.local" class="form-control" required>
+              <option ng-repeat="equipo in equipos" value="{{equipo.id}}">{{equipo.nombre}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword" class="col-lg-2 control-label">Equipo Visitante</label>
+          <div class="col-lg-10">
+            <select ng-model="juego.visitante" class="form-control" required>
+              <option ng-repeat="equipo in equipos" value="{{equipo.id}}">{{equipo.nombre}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <button type="reset" class="btn btn-default">Cancelar</button>
+            <button type="submit" class="btn btn-primary" ng-click="registrar()">Registrar</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <div class="col-sm-3"></div>
+</div>
+
+<legend>Lista de Juegos</legend>
+<div class="row">
+  <div ng-repeat="j in juegos">
+    <div class="col-sm-4">
+      <p>{{j.fecha}}</p>
+      <p>{{j.local.nombre}} VS {{j.visitante.nombre}}</p>
+      <p>
+        <button ng-click="eliminar(j, $index)" class="btn btn-danger">Borrar</button>
+        <button ng-click="visible=!visible" class="btn btn-info" type="submit">Modificar</button>
+      </p>
+      <form ng-show="visible">
+        <div class="form-group">
+          <label>Fecha : </label>
+          <input class="form-control" type="date" ng-model="juegos[$index].nombre" required>
+        </div>
+        <div class="form-group">
+          <label>Equipo Local : </label>
+          <select ng-model="juegos[$index].local" class="form-control" required>
+            <option ng-repeat="equipo in equipos" value="{{equipo.id}}">{{equipo.nombre}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Equipo Visitante : </label>
+          <select ng-model="juegos[$index].visitante" class="form-control" required>
+            <option ng-repeat="equipo in equipos" value="{{equipo.id}}">{{equipo.nombre}}</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-block btn-primary" ng-click="editar(j, $index)">Guardar</button>
+      </form>
+    </div>
+  </div>
+</div>

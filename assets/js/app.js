@@ -54,7 +54,7 @@ app.config(function($stateProvider, $urlRouterProvider, toastrConfig) {
     .state('jugadores', {
       url: "/jugadores",
       templateUrl: "vistas/jugadores.html",
-      // controller: 'PerfilCtrl',
+      controller: 'JugadorCtrl',
       data: {
         loginRequerido: true
       }
@@ -62,7 +62,7 @@ app.config(function($stateProvider, $urlRouterProvider, toastrConfig) {
     .state('juegos', {
       url: "/juegos",
       templateUrl: "vistas/juegos.html",
-      // controller: 'PerfilCtrl',
+      controller: 'JuegoCtrl',
       data: {
         loginRequerido: true
       }

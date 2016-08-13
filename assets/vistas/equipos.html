@@ -11,6 +11,12 @@
           </div>
         </div>
         <div class="form-group">
+          <label for="inputEmail" class="col-lg-2 control-label">Imagen</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" id="inputEmail" placeholder="Link de imagen" ng-model="equipo.imagen" required>
+          </div>
+        </div>
+        <div class="form-group">
           <label for="inputEmail" class="col-lg-2 control-label">Año de fundación</label>
           <div class="col-lg-10">
             <input type="number" class="form-control" id="inputEmail" placeholder="Año de fundación" ng-model="equipo.anio" required>
@@ -50,10 +56,13 @@
 <div class="row">
   <div ng-repeat="e in equipos">
     <div class="col-sm-4">
-      <p>{{e.nombre}}</p>
+      <img ng-src="{{e.imagen}}" alt="equipo" height="50" width="50">
+      <h3>{{e.nombre}}</h3>
       <p>{{e.anio}}</p>
-      <p>{{e.presidente}}</p>
-      <p><a href="#">Ver Jugadores</a></p>
+      <p>Presidente: {{e.presidente}}</p>
+      <p>Entrenador: {{e.entrenador}}</p>
+      <p>Estadio: {{e.estadio}}</p>
+      <!-- <p><a href="#">Ver Jugadores</a></p> -->
       <p>
         <button ng-click="eliminar(e, $index)" class="btn btn-danger">Borrar</button>
         <button ng-click="visible=!visible" class="btn btn-info" type="submit">Modificar</button>
@@ -61,6 +70,10 @@
       <form ng-show="visible">
         <div class="form-group">
           <label>Nombre : </label>
+          <input class="form-control" type="text" ng-model="equipos[$index].nombre" required>
+        </div>
+        <div class="form-group">
+          <label>Imagen : </label>
           <input class="form-control" type="text" ng-model="equipos[$index].nombre" required>
         </div>
         <div class="form-group">
