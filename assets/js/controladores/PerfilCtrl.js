@@ -4,7 +4,7 @@ app.controller('PerfilCtrl', ['$scope', 'AdministradorFactory', 'toastr', '$cook
     $scope.admin = {};
 
     AdministradorFactory.get({
-      id: $cookies.get('AdminId')
+      idAdministrador: $cookies.get('AdminId')
     }).$promise.then(function success(respuesta) {
         console.log('éxito en la obtenciòn de administrador', respuesta);
         $scope.admin = respuesta;

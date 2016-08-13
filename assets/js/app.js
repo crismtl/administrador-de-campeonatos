@@ -46,7 +46,7 @@ app.config(function($stateProvider, $urlRouterProvider, toastrConfig) {
     .state('equipos', {
       url: "/equipos",
       templateUrl: "vistas/equipos.html",
-      // controller: 'PerfilCtrl',
+      controller: 'EquipoCtrl',
       data: {
         loginRequerido: true
       }
@@ -78,7 +78,7 @@ app.run(function($rootScope, $cookies, $state, toastr) {
       if ($cookies.get('AdminId')) {
         toastr.success('Felicidades usted ha ingresado al sistema', 'Éxito');
       } else {
-        toastr.info('Necesita estar logueado para poder acceder a esta vista', 'Información');
+        toastr.info('Necesita ingresar al sistema para poder acceder a esta vista', 'Información');
         event.preventDefault();
         return $state.go('ingreso')
       }

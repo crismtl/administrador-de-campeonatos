@@ -13,7 +13,7 @@
         <div class="form-group">
           <label for="inputEmail" class="col-lg-2 control-label">Año de fundación</label>
           <div class="col-lg-10">
-            <input type="text" class="form-control" id="inputEmail" placeholder="Año de fundación" ng-model="equipo.anio" required>
+            <input type="number" class="form-control" id="inputEmail" placeholder="Año de fundación" ng-model="equipo.anio" required>
           </div>
         </div>
         <div class="form-group">
@@ -44,4 +44,43 @@
     </form>
   </div>
   <div class="col-sm-3"></div>
+</div>
+
+<legend>Lista de Equipos</legend>
+<div class="row">
+  <div ng-repeat="e in equipos">
+    <div class="col-sm-4">
+      <p>{{e.nombre}}</p>
+      <p>{{e.anio}}</p>
+      <p>{{e.presidente}}</p>
+      <p><a href="#">Ver Jugadores</a></p>
+      <p>
+        <button ng-click="eliminar(e, $index)" class="btn btn-danger">Borrar</button>
+        <button ng-click="visible=!visible" class="btn btn-info" type="submit">Modificar</button>
+      </p>
+      <form ng-show="visible">
+        <div class="form-group">
+          <label>Nombre : </label>
+          <input class="form-control" type="text" ng-model="equipos[$index].nombre" required>
+        </div>
+        <div class="form-group">
+          <label>Año de fundación : </label>
+          <input class="form-control" type="number" ng-model="equipos[$index].anio" required>
+        </div>
+        <div class="form-group">
+          <label>Presidente : </label>
+          <input class="form-control" type="text" ng-model="equipos[$index].presidente" required>
+        </div>
+        <div class="form-group">
+          <label>Entrenador : </label>
+          <input class="form-control" type="text" ng-model="equipos[$index].entrenador" required>
+        </div>
+        <div class="form-group">
+          <label>Estadio : </label>
+          <input class="form-control" type="text" ng-model="equipos[$index].estadio" required>
+        </div>
+        <button type="submit" class="btn btn-block btn-primary" ng-click="editar(e, $index)">Guardar</button>
+      </form>
+    </div>
+  </div>
 </div>
