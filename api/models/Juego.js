@@ -16,6 +16,9 @@ module.exports = {
     },
     visitante: {
       model: 'equipo'
+    },
+    marcador: {
+      type: 'string'
     }
   }
 };

@@ -37,12 +37,30 @@ app.controller('JuegoCtrl', ['$scope', 'JuegoFactory', 'EquipoFactory', 'toastr'
         function success(respuesta) {
           console.log('éxito en el registro de juego', respuesta);
           toastr.success('Éxito!', 'Se registró un nuevo juego');
+          var juego = respuesta;
+          juego.local.nombre = getNombreDeEquipo(juego.local);
+          juego.visitante.nombre = getNombreDeEquipo(juego.visitante);
+          console.log('juego modificado', juego);
           $scope.juego = {};
-          $scope.juegos.push(respuesta);
+          $scope.juegos.push(juego);
         },
         function error(error) {
           toastr.error('Error!', 'No se registró el nuevo juego');
           console.log('Error en registro de juego', error);
+        });
+    }
+
+    function getNombreDeEquipo(id) {
+      EquipoFactory.get({
+        idEquipo: id
+      }).$promise.then(
+        function success(respuesta) {
+          console.log('éxito');
+          return respuesta.nombre
+        },
+        function error(error) {
+          toastr.error('Error!', 'No se pudo obtener el equipo');
+          console.log('Error en en la lectura de equipo', error);
         });
     }
 
