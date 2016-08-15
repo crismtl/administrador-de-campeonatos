@@ -46,35 +46,35 @@ app.controller('JuegoCtrl', ['$scope', 'JuegoFactory', 'EquipoFactory', 'toastr'
         });
     }
 
-    $scope.eliminar = function(jugador, indice) {
-      console.log(jugador);
-      JugadorFactory.delete({
-        idJugador: jugador.id
+    $scope.eliminar = function(juego, indice) {
+      console.log(juego);
+      JuegoFactory.delete({
+        idJuego: juego.id
       }).$promise.then(
         function success(respuesta) {
-          console.log('éxito en eliminar el jugador');
-          toastr.success('Éxito!', 'Se eliminó un jugador');
+          console.log('éxito en eliminar el juego');
+          toastr.success('Éxito!', 'Se eliminó un juego');
           $scope.juegos.splice(indice, 1);
         },
         function error(error) {
-          toastr.error('Error!', 'No se eliminó el jugador');
-          console.log('Error en eliminar el jugador', error);
+          toastr.error('Error!', 'No se eliminó el juego');
+          console.log('Error en eliminar el juego', error);
         });
     }
 
-    $scope.editar = function(jugador, indice) {
-      console.log(jugador);
-      JugadorFactory.update({
-        idJugador: jugador.id
-      }, jugador).$promise.then(
+    $scope.editar = function(juego, indice) {
+      console.log(juego);
+      JuegoFactory.update({
+        idJuego: juego.id
+      }, juego).$promise.then(
         function success(respuesta) {
-          console.log('éxito en editar el jugador', respuesta);
-          toastr.success('Éxito!', 'Se editó un jugador');
+          console.log('éxito en editar el juego', respuesta);
+          toastr.success('Éxito!', 'Se editó un juego');
           $scope.juegos[indice] = respuesta;
         },
         function error(error) {
-          toastr.error('Error!', 'No se editó el jugador');
-          console.log('Error en editar el jugador', error);
+          toastr.error('Error!', 'No se editó el juego');
+          console.log('Error en editar el juego', error);
         });
     }
   }
